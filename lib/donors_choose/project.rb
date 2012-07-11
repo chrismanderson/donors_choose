@@ -13,6 +13,14 @@ class DonorsChoose::Project
   end
 
   def self.by_id(id)
-    DonorsChoose::Request.get(:id => id)
+    DonorsChoose::Request.get(:id => id).first
+  end
+
+  def self.by_url(url)
+    DonorsChoose::Request.get(:id => parse_id_from_url(url))
+  end
+
+  def self.parse_id_from_url url
+    url.split('/').last
   end
 end
