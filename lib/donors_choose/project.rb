@@ -18,7 +18,7 @@ class DonorsChoose::Project
 
   def self.by_url(url)
     if donors_url? url
-      DonorsChoose::Request.get(:id => parse_id_from_url(url))
+      DonorsChoose::Request.get(:id => parse_id_from_url(url)).first
     else
       nil
     end

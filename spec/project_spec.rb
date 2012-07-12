@@ -24,13 +24,13 @@ describe DonorsChoose::Project do
   end
 
   it "is able to find projects by url" do
-    projects = [double]
+    project = double
     DonorsChoose::Request.should_receive(:get).
       with(:id => "810971").
-      and_return(projects)
+      and_return([project])
 
     results = described_class.by_url('http://www.donorschoose.org/project/navigating-the-inferno/810971/')
-    results.should eq(projects)
+    results.should eq(project)
   end
 
   it "is able to find a project by id" do
