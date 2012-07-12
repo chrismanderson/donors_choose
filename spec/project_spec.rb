@@ -23,16 +23,6 @@ describe DonorsChoose::Project do
     results.should eq(projects)
   end
 
-  it "is able to find projects by id" do
-    project = double
-    DonorsChoose::Request.should_receive(:get).
-      with(:id => '758541').
-      and_return([project])
-
-    results = described_class.by_id('758541')
-    results.should eq(project)
-  end
-
   it "is able to find projects by url" do
     projects = [double]
     DonorsChoose::Request.should_receive(:get).
@@ -41,5 +31,15 @@ describe DonorsChoose::Project do
 
     results = described_class.by_url('http://www.donorschoose.org/project/navigating-the-inferno/810971/')
     results.should eq(projects)
+  end
+
+  it "is able to find a project by id" do
+    project = double
+    DonorsChoose::Request.should_receive(:get).
+      with(:id => "812882").
+      and_return([project])
+
+    results = described_class.by_id("812882")
+    results.should eq(project)
   end
 end

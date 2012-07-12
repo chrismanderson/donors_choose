@@ -44,5 +44,5 @@ http_interactions:
         \ \"totalProposals\": \"0\",\n  \"index\": \"0\",\n  \"max\": \"10\",\n  \"proposals\":
         []\n}\r\n"
     http_version: 
-  recorded_at: Wed, 11 Jul 2012 20:24:43 GMT
+  recorded_at: Wed, 11 Jul 2012 20:23:14 GMT
 recorded_with: VCR 2.2.3
