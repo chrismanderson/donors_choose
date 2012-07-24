@@ -24,8 +24,8 @@ class DonorsChoose::Project
     end
   end
 
-  def self.by_poverty_level(poverty?)
-    DonorsChoose::Request.get(:highLevelPoverty => poverty?)
+  def self.by_poverty_level(is_poverty)
+    DonorsChoose::Request.get(:highLevelPoverty => is_poverty)
   end
 
   def self.donors_url? url
