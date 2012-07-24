@@ -13,6 +13,10 @@ module DonorsChoose
           end
         end
       end
+
+      def to_hash
+        
+      end
     end
   end
 end

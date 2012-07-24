@@ -24,6 +24,10 @@ class DonorsChoose::Project
     end
   end
 
+  def self.by_poverty_level(poverty?)
+    DonorsChoose::Request.get(:highLevelPoverty => poverty?)
+  end
+
   def self.donors_url? url
     url.include? 'donorschoose.org/project/'
   end
